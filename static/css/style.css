@@ -1,0 +1,26 @@
+p {
+      font-family: 'Heebo', sans-serif;
+    }
+    .font-lato {
+      font-family: 'Lato', sans-serif;
+    }
+
+    .slide-menu {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .slide-in {
+      transform: translateX(0%);
+    }
+
+    .slide-out {
+      transform: translateX(100%);
+    }
+
+h1{
+    font-family: 'Lato', sans-serif;
+}
+
+html,body{
+    overflow-x: hidden;
+}
