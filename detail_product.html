@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FurniCraft - Home</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./static/css/style.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Lato:wght@700;900&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+  <style>
+    
+  </style>
+</head>
+
+<body class="bg-white  relative">
+
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden"></div>
+
+<header class="relative bg-cover bg-center h-[40vh] md:h-[70vh]" style="background-image: url('./static/images/product_page.png');">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+<nav id="navbar" class="fixed top-0 left-0 w-full z-50 px-6 py-4 md:px-24 transition-all duration-300">
+    <div class="flex justify-between items-center">
+<a href="index.html" id="brand" class="transition-all block">
+  <img src="./static/images/logo.png" alt="FurniCraft Logo" class="h-10 md:h-12" />
+</a>
+      
+      <ul id="navLinks" class="hidden md:flex space-x-8 py-6 text-white text-[14px] font-lato font-semibold uppercase transition-all">
+        <li><a href="index.html" class="hover:text-[#bc9565]">Home</a></li>
+        <li><a href="products.html" class="text-[#bc9565]">Our Products</a></li>
+        <li><a href="about.html" class="hover:text-[#bc9565]">About</a></li>
+        <li><a href="contact.html" class="hover:text-[#bc9565]">Contact</a></li>
+      </ul>
+
+      <div class="md:hidden z-50">
+        <button id="menuBtn" class="text-white text-2xl transition-all">&#9776;</button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="mobileMenu" class="fixed top-0 right-0 h-full w-3/4 bg-black bg-opacity-95 text-white text-lg font-lato z-[9999] hidden">
+    <div class="flex justify-end px-4 pt-4">
+      <button id="closeBtn" class="text-3xl font-bold focus:outline-none">&times;</button>
+    </div>
+    <ul class="flex flex-col items-start space-y-6 p-6 pt-10 uppercase text-[14px] font-semibold">
+      <li><a href="index.html" class="hover:text-[#bc9565]">Home</a></li>
+      <li><a href="products.html" class="text-[#bc9565]">Our Products</a></li>
+      <li><a href="about.html" class="hover:text-[#bc9565]">About</a></li>
+      <li><a href="contact.html" class="hover:text-[#bc9565]">Contact</a></li>
+    </ul>
+  </div>
+
+
+    <div class="relative z-10 flex flex-col justify-center items-center h-full px-6 md:px-20 text-white text-center">
+      <h1 class="text-4xl md:text-6xl font-lato font-bold mb-4 uppercase text-center" style="line-height: 1.3;">
+        OUR PRODUCTS
+      </h1>
+      <p class="text-lg md:text-xl max-w-xl mt-2">
+  <a href="index.html" class=" hover:underline">Home</a> / Products
+</p>
+
+    </div>
+  </header>
+
+
+<section class="flex flex-col lg:flex-row gap-10 mt-20 px-6 lg:px-20">
+  <div class="lg:w-1/2">
+    <div class="w-full h-[400px] mb-4 cursor-pointer">
+      <img id="mainImage" src="./static/images/product1.jpg" alt="Furniture" class="w-full h-full object-cover rounded-xl" />
+    </div>
+
+    <div class="relative flex items-center">
+      <button id="scrollLeft" class="absolute left-0 z-10   p-2">
+        &#10094;
+      </button>
+
+      <div id="thumbnailContainer" class="flex gap-3 overflow-x-auto scrollbar-hide px-10">
+        <img src="./static/images/product1.jpg" class="w-24 h-24 object-cover rounded cursor-pointer thumbnail" />
+        <img src="./static/images/product2.jpg" class="w-24 h-24 object-cover rounded cursor-pointer thumbnail" />
+        <img src="./static/images/product3.jpg" class="w-24 h-24 object-cover rounded cursor-pointer thumbnail" />
+        <img src="./static/images/product4.jpg" class="w-24 h-24 object-cover rounded cursor-pointer thumbnail" />
+        <img src="./static/images/product5.jpg" class="w-24 h-24 object-cover rounded cursor-pointer thumbnail" />
+      </div>
+
+      <button id="scrollRight" class="absolute right-0 z-10 p-2">
+        &#10095;
+      </button>
+    </div>
+  </div>
+
+  
+  <div class="lg:w-1/2">
+  <h2 class="text-3xl font-bold text-[#2e2e2e] uppercase mb-10">Modern Leather Sofa</h2>
+
+  <table class="w-full text-left border-collapse table-auto">
+    <tbody>
+      <tr class="border-b">
+        <td class="py-2 pr-4 font-semibold text-[#2e2e2e] border-r border-gray-300 w-1/3">Material</td>
+        <td class="py-2 pl-4">Premium Leather</td>
+      </tr>
+      <tr class="border-b">
+        <td class="py-2 pr-4 font-semibold text-[#2e2e2e] border-r border-gray-300">Dimensions</td>
+        <td class="py-2 pl-4">84" L x 35" W x 34" H</td>
+      </tr>
+      <tr class="border-b">
+        <td class="py-2 pr-4 font-semibold text-[#2e2e2e] border-r border-gray-300">Color</td>
+        <td class="py-2 pl-4">Dark Grey</td>
+      </tr>
+      <tr class="border-b">
+        <td class="py-2 pr-4 font-semibold text-[#2e2e2e] border-r border-gray-300">Weight</td>
+        <td class="py-2 pl-4">40 kg</td>
+      </tr>
+      <tr class="border-b">
+        <td class="py-2 pr-4 font-semibold text-[#2e2e2e] border-r border-gray-300">Seating Capacity</td>
+        <td class="py-2 pl-4">3-Seater</td>
+      </tr>
+      <tr class="border-b">
+        <td class="py-2 pr-4 font-semibold text-[#2e2e2e] border-r border-gray-300">Warranty</td>
+        <td class="py-2 pl-4">5 Years</td>
+      </tr>
+      <tr class="border-b">
+        <td class="py-2 pr-4 font-semibold text-[#2e2e2e] border-r border-gray-300">Availability</td>
+        <td class="py-2 pl-4">In Stock</td>
+      </tr>
+      <tr>
+        <td class="py-2 pr-4 font-semibold text-[#2e2e2e] border-r border-gray-300">Return Policy</td>
+        <td class="py-2 pl-4">10-Day Return or Replacement</td>
+      </tr>
+    </tbody>
+  </table>
+<button 
+  class="mt-6 w-full bg-[#bc9565] text-white py-3 rounded hover:bg-[#a27848] transition duration-300"
+  onclick="openEnquiryModal('Modern Leather Sofa', 'Premium Leather', '₹45,000', 'Dark Grey')"
+>
+  Enquire Now
+</button>
+
+</div>
+<div id="imageModal" class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-70 z-50">
+  <div class="relative bg-white rounded-lg p-4 max-w-4xl w-full">
+    <button id="closeModal" class="absolute top-2 right-3 text-gray-600 text-2xl font-bold">&times;</button>
+
+    <button id="modalPrev" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-3xl text-gray-700 hover:text-black">
+ &#10094;    
+</button>
+
+    <img id="modalImage" src="" class="w-full max-h-[80vh] object-contain rounded-lg" />
+
+    <button id="modalNext" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-3xl text-gray-700 hover:text-black">
+        &#10095;
+    </button>
+  </div>
+</div>
+
+
+
+
+
+<div id="enquiryModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-white rounded-lg w-full max-w-lg p-6 relative">
+    <button onclick="closeEnquiryModal()" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl">&times;</button>
+    <h2 class="text-2xl font-bold text-[#2e2e2e] mb-4">Product Enquiry</h2>
+
+    <form>
+      <div class="mb-4">
+        <label class="block text-sm font-medium">Product Name</label>
+        <input id="productName" type="text" class="w-full border border-gray-300 rounded px-4 py-2 mt-1" readonly>
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium">Material</label>
+        <input id="productMaterial" type="text" class="w-full border border-gray-300 rounded px-4 py-2 mt-1" readonly>
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium">Price</label>
+        <input id="productPrice" type="text" class="w-full border border-gray-300 rounded px-4 py-2 mt-1" readonly>
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium">Color</label>
+        <input id="productColor" type="text" class="w-full border border-gray-300 rounded px-4 py-2 mt-1" readonly>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-medium">Your Name</label>
+        <input type="text" class="w-full border border-gray-300 rounded px-4 py-2 mt-1" placeholder="Enter your name" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium">Contact Number</label>
+        <input type="tel" class="w-full border border-gray-300 rounded px-4 py-2 mt-1" placeholder="Enter your contact number" required>
+      </div>
+
+      <button type="submit" class="w-full bg-[#bc9565] text-white py-2 rounded hover:bg-[#a27848] transition duration-300">
+        Submit Enquiry
+      </button>
+    </form>
+  </div>
+</div>
+
+</section>
+
+
+
+
+
+<footer class="bg-black text-white px-6 md:px-20 py-20 mt-20">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+    <div>
+      <img src="/static/images/logo11.png" alt="Logo" class="w-44 mb-4">
+      <p class="text-md text-gray-300">
+        We offer end-to-end furniture manufacturing, repair and polishing services to bring your spaces to life.
+      </p>
+    </div>
+
+    <div>
+      <h1 class="text-lg font-semibold mb-4 uppercase">Our Services</h1>
+      <ul class="space-y-4 text-sm text-gray-300 font-lato">
+        <li><a href="#" class="hover:text-white">Furniture Manufacturing</a></li>
+        <li><a href="#" class="hover:text-white">Furniture Repair</a></li>
+        <li><a href="#" class="hover:text-white">Polishing & Refinishing</a></li>
+        <li><a href="#" class="hover:text-white">Home Delivery & Setup</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-lg font-semibold mb-4 uppercase">Quick Links</h3>
+      <ul class="space-y-4 text-sm text-gray-300 font-lato">
+        <li><a href="#" class="hover:text-white">Home</a></li>
+        <li><a href="#" class="hover:text-white">Our Products</a></li>
+        <li><a href="#" class="hover:text-white">About</a></li>
+        <li><a href="#" class="hover:text-white">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-lg font-semibold mb-4 uppercase">Follow Us</h3>
+      <div class="flex space-x-4">
+        <a href="#" class="text-gray-300 hover:text-white">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="text-gray-300 hover:text-white">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="text-gray-300 hover:text-white">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="text-gray-300 hover:text-white">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="border-gray-600 mb-6" />
+
+  <div class="text-center text-sm text-gray-400">
+    © 2025 All Rights Reserved. Powered by <span class="text-white font-semibold">Cybexel</span>
+  </div>
+</footer>
+
+<script src="./static/js/script.js"></script>
+  </body>
+  </html>
