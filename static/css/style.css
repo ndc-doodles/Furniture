@@ -33,3 +33,16 @@ html,body{
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+
+
+
+   @media (max-width: 768px) {
+    .hide-scrollbar {
+      -ms-overflow-style: none;  
+      scrollbar-width: none;     
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;           
+    }
+  }

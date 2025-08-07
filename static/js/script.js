@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 const navbar = document.getElementById('navbar');
     const brand = document.getElementById('brand');
     const navLinks = document.getElementById('navLinks');
@@ -38,23 +45,13 @@ const navbar = document.getElementById('navbar');
 
 
 
-    const container = document.getElementById('cardContainer');
-    const scrollLeftBtn = document.getElementById('scrollLeft');
-    const scrollRightBtn = document.getElementById('scrollRight');
-
-    scrollLeftBtn.addEventListener('click', () => {
-      container.scrollBy({ left: -container.offsetWidth, behavior: 'smooth' });
-    });
-
-    scrollRightBtn.addEventListener('click', () => {
-      container.scrollBy({ left: container.offsetWidth, behavior: 'smooth' });
-    });
 
 
 
 
 
- const thumbnailContainer = document.getElementById("thumbnailContainer");
+ document.addEventListener("DOMContentLoaded", function () {
+  const thumbnailContainer = document.getElementById("thumbnailContainer");
   const scrollLeft = document.getElementById("scrollLeft");
   const scrollRight = document.getElementById("scrollRight");
   const thumbnails = document.querySelectorAll(".thumbnail");
@@ -66,63 +63,67 @@ const navbar = document.getElementById('navbar');
   const modalPrev = document.getElementById("modalPrev");
   const modalNext = document.getElementById("modalNext");
 
-  let currentIndex = 0; // Current image index
+  let currentIndex = 0;
 
-  // Scroll thumbnails
-  scrollLeft.addEventListener("click", () => {
-    thumbnailContainer.scrollBy({ left: -150, behavior: "smooth" });
-  });
-
-  scrollRight.addEventListener("click", () => {
-    thumbnailContainer.scrollBy({ left: 150, behavior: "smooth" });
-  });
-
-  // Update Main Image from thumbnail
-  thumbnails.forEach((thumb, index) => {
-    thumb.addEventListener("click", () => {
-      mainImage.src = thumb.src;
-      currentIndex = index;
+  if (scrollLeft && scrollRight && thumbnailContainer) {
+    scrollLeft.addEventListener("click", () => {
+      thumbnailContainer.scrollBy({ left: -150, behavior: "smooth" });
     });
-  });
 
-  // Open modal on main image click
-  mainImage.addEventListener("click", () => {
-    modalImage.src = mainImage.src;
-    imageModal.classList.remove("hidden");
-    imageModal.classList.add("flex");
+    scrollRight.addEventListener("click", () => {
+      thumbnailContainer.scrollBy({ left: 150, behavior: "smooth" });
+    });
+  }
 
-    // Find the index of the current image
+  if (thumbnails && mainImage) {
     thumbnails.forEach((thumb, index) => {
-      if (thumb.src === mainImage.src) {
+      thumb.addEventListener("click", () => {
+        mainImage.src = thumb.src;
         currentIndex = index;
+      });
+    });
+
+    mainImage.addEventListener("click", () => {
+      if (modalImage && imageModal) {
+        modalImage.src = mainImage.src;
+        imageModal.classList.remove("hidden");
+        imageModal.classList.add("flex");
+
+        thumbnails.forEach((thumb, index) => {
+          if (thumb.src === mainImage.src) {
+            currentIndex = index;
+          }
+        });
       }
     });
-  });
+  }
 
-  // Close modal
-  closeModal.addEventListener("click", () => {
-    imageModal.classList.add("hidden");
-    imageModal.classList.remove("flex");
-  });
-
-  imageModal.addEventListener("click", (e) => {
-    if (e.target === imageModal) {
+  if (closeModal && imageModal) {
+    closeModal.addEventListener("click", () => {
       imageModal.classList.add("hidden");
       imageModal.classList.remove("flex");
-    }
-  });
+    });
 
-  // Show previous image
-  modalPrev.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
-    modalImage.src = thumbnails[currentIndex].src;
-  });
+    imageModal.addEventListener("click", (e) => {
+      if (e.target === imageModal) {
+        imageModal.classList.add("hidden");
+        imageModal.classList.remove("flex");
+      }
+    });
+  }
 
-  // Show next image
-  modalNext.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % thumbnails.length;
-    modalImage.src = thumbnails[currentIndex].src;
-  });
+  if (modalPrev && modalNext && modalImage && thumbnails.length > 0) {
+    modalPrev.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+      modalImage.src = thumbnails[currentIndex].src;
+    });
+
+    modalNext.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % thumbnails.length;
+      modalImage.src = thumbnails[currentIndex].src;
+    });
+  }
+});
 
 
 
@@ -147,3 +148,23 @@ const navbar = document.getElementById('navbar');
   function closeEnquiryModal() {
     document.getElementById('enquiryModal').classList.add('hidden');
   }
+
+
+
+
+
+
+
+
+   const container = document.getElementById('cardContainer');
+  const scrollLeftBtn = document.getElementById('scrollLeft');
+  const scrollRightBtn = document.getElementById('scrollRight');
+
+  scrollLeftBtn.addEventListener('click', () => {
+    container.scrollBy({ left: -container.clientWidth, behavior: 'smooth' });
+  });
+
+  scrollRightBtn.addEventListener('click', () => {
+    container.scrollBy({ left: container.clientWidth, behavior: 'smooth' });
+  });
+
