@@ -168,3 +168,26 @@ const navbar = document.getElementById('navbar');
     container.scrollBy({ left: container.clientWidth, behavior: 'smooth' });
   });
 
+
+
+
+
+
+
+function openShareModal(event) {
+    event.preventDefault(); // prevent link click
+    event.stopPropagation(); // stop event bubbling
+    document.getElementById('shareModal').classList.remove('hidden');
+  }
+
+  function closeShareModal() {
+    document.getElementById('shareModal').classList.add('hidden');
+  }
+
+  // Optional: Close modal when clicking outside
+  window.addEventListener('click', function (e) {
+    const modal = document.getElementById('shareModal');
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+    }
+  });

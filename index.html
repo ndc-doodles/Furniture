@@ -161,79 +161,97 @@ With decades of design expertise, we create furniture that blends style, comfort
     &#10095;
   </button>
 
+
+  
   <div id="cardContainer" class="hide-scrollbar flex md:grid md:grid-cols-2 lg:grid-cols-4 overflow-x-auto md:overflow-visible gap-6 scroll-smooth snap-x snap-mandatory px-1 md:px-0">
     
-    <a href="detail_product.html" class="min-w-full md:min-w-0 snap-start">
-      <div class="bg-white rounded-xl shadow p-4 relative hover:shadow-lg transition duration-300 w-full">
-        <div class="absolute top-2 right-2 cursor-pointer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-            <path fill="#3f3f3f"
-              d="M17 22q-1.25 0-2.125-.875T14 19q0-.15.075-.7L7.05 14.2q-.4.375-.925.588T5 15q-1.25 0-2.125-.875T2 12t.875-2.125T5 9q.6 0 1.125.213t.925.587l7.025-4.1q-.05-.175-.062-.337T14 5q0-1.25.875-2.125T17 2t2.125.875T20 5t-.875 2.125T17 8q-.6 0-1.125-.213T14.95 7.2l-7.025 4.1q.05.175.063.338T8 12t-.012.363t-.063.337l7.025 4.1q.4-.375.925-.587T17 16q1.25 0 2.125.875T20 19t-.875 2.125T17 22m0-2q.425 0 .713-.287T18 19t-.288-.712T17 18t-.712.288T16 19t.288.713T17 20M5 13q.425 0 .713-.288T6 12t-.288-.712T5 11t-.712.288T4 12t.288.713T5 13m12-7q.425 0 .713-.288T18 5t-.288-.712T17 4t-.712.288T16 5t.288.713T17 6m0-1" />
-          </svg>
-        </div>
-        <img src="./static/images/product1.jpg" alt="Sofa" class="w-full h-64 object-cover rounded-md mb-4">
-        <h3 class="text-lg font-semibold">Modern Sofa</h3>
-        <p class="text-sm text-gray-500">Material: Leather</p>
-        <p class="text-base font-bold mt-1">₹18,999</p>
-        <button class="mt-4 w-full bg-[#bc9565] text-white py-2 rounded hover:bg-[#a27848] transition duration-300">
-          Detail View
-        </button>
-      </div>
-    </a>
+<a href="detail_product.html" class="min-w-full md:min-w-0 snap-start group relative">
+  <div class="bg-white rounded-xl shadow p-4 hover:shadow-lg transition duration-300 w-full">
 
-    <a href="detail_product.html" class="min-w-full md:min-w-0 snap-start">
-      <div class="bg-white rounded-xl shadow p-4 relative hover:shadow-lg transition duration-300 w-full">
-        <div class="absolute top-2 right-2 cursor-pointer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-            <path fill="#3f3f3f"
-              d="M17 22q-1.25 0-2.125-.875T14 19q0-.15.075-.7L7.05 14.2q-.4.375-.925.588T5 15q-1.25 0-2.125-.875T2 12t.875-2.125T5 9q.6 0 1.125.213t.925.587l7.025-4.1q-.05-.175-.062-.337T14 5q0-1.25.875-2.125T17 2t2.125.875T20 5t-.875 2.125T17 8q-.6 0-1.125-.213T14.95 7.2l-7.025 4.1q.05.175.063.338T8 12t-.012.363t-.063.337l7.025 4.1q.4-.375.925-.587T17 16q1.25 0 2.125.875T20 19t-.875 2.125T17 22m0-2q.425 0 .713-.287T18 19t-.288-.712T17 18t-.712.288T16 19t.288.713T17 20M5 13q.425 0 .713-.288T6 12t-.288-.712T5 11t-.712.288T4 12t.288.713T5 13m12-7q.425 0 .713-.288T18 5t-.288-.712T17 4t-.712.288T16 5t.288.713T17 6m0-1" />
-          </svg>
-        </div>
-        <img src="./static/images/product1.jpg" alt="Sofa" class="w-full h-64 object-cover rounded-md mb-4">
-        <h3 class="text-lg font-semibold">Modern Sofa</h3>
-        <p class="text-sm text-gray-500">Material: Leather</p>
-        <p class="text-base font-bold mt-1">₹18,999</p>
-        <button class="mt-4 w-full bg-[#bc9565] text-white py-2 rounded hover:bg-[#a27848] transition duration-300">
-          Detail View
-        </button>
-      </div>
-    </a>
+    <div class="absolute top-2 right-2 z-20 cursor-pointer" onclick="openShareModal(event)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+        <path fill="#3f3f3f"
+          d="M17 22q-1.25 0-2.125-.875T14 19q0-.15.075-.7L7.05 14.2q-.4.375-.925.588T5 15q-1.25 0-2.125-.875T2 12t.875-2.125T5 9q.6 0 1.125.213t.925.587l7.025-4.1q-.05-.175-.062-.337T14 5q0-1.25.875-2.125T17 2t2.125.875T20 5t-.875 2.125T17 8q-.6 0-1.125-.213T14.95 7.2l-7.025 4.1q.05.175.063.338T8 12t-.012.363t-.063.337l7.025 4.1q.4-.375.925-.587T17 16q1.25 0 2.125.875T20 19t-.875 2.125T17 22m0-2q.425 0 .713-.287T18 19t-.288-.712T17 18t-.712.288T16 19t.288.713T17 20M5 13q.425 0 .713-.288T6 12t-.288-.712T5 11t-.712.288T4 12t.288.713T5 13m12-7q.425 0 .713-.288T18 5t-.288-.712T17 4t-.712.288T16 5t.288.713T17 6m0-1" />
+      </svg>
+    </div>
 
-    <a href="detail_product.html" class="min-w-full md:min-w-0 snap-start">
-      <div class="bg-white rounded-xl shadow p-4 relative hover:shadow-lg transition duration-300 w-full">
-        <div class="absolute top-2 right-2 cursor-pointer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-            <path fill="#3f3f3f"
-              d="M17 22q-1.25 0-2.125-.875T14 19q0-.15.075-.7L7.05 14.2q-.4.375-.925.588T5 15q-1.25 0-2.125-.875T2 12t.875-2.125T5 9q.6 0 1.125.213t.925.587l7.025-4.1q-.05-.175-.062-.337T14 5q0-1.25.875-2.125T17 2t2.125.875T20 5t-.875 2.125T17 8q-.6 0-1.125-.213T14.95 7.2l-7.025 4.1q.05.175.063.338T8 12t-.012.363t-.063.337l7.025 4.1q.4-.375.925-.587T17 16q1.25 0 2.125.875T20 19t-.875 2.125T17 22m0-2q.425 0 .713-.287T18 19t-.288-.712T17 18t-.712.288T16 19t.288.713T17 20M5 13q.425 0 .713-.288T6 12t-.288-.712T5 11t-.712.288T4 12t.288.713T5 13m12-7q.425 0 .713-.288T18 5t-.288-.712T17 4t-.712.288T16 5t.288.713T17 6m0-1" />
-          </svg>
-        </div>
-        <img src="./static/images/product1.jpg" alt="Sofa" class="w-full h-64 object-cover rounded-md mb-4">
-        <h3 class="text-lg font-semibold">Modern Sofa</h3>
-        <p class="text-sm text-gray-500">Material: Leather</p>
-        <p class="text-base font-bold mt-1">₹18,999</p>
-        <button class="mt-4 w-full bg-[#bc9565] text-white py-2 rounded hover:bg-[#a27848] transition duration-300">
-          Detail View
-        </button>
-      </div>
-    </a>
+    <img src="./static/images/product1.jpg" alt="Sofa" class="w-full h-64 object-cover rounded-md mb-4 pointer-events-none">
+    <h3 class="text-lg font-semibold">Modern Sofa</h3>
+    <p class="text-sm text-gray-500">Material: Leather</p>
+    <p class="text-base font-bold mt-1">₹18,999</p>
+    <button class="mt-4 w-full bg-[#bc9565] text-white py-2 rounded hover:bg-[#a27848] transition duration-300">
+      Detail View
+    </button>
+  </div>
+</a>
 
-    <a href="detail_product.html" class="min-w-full md:min-w-0 snap-start">
-      <div class="bg-white rounded-xl shadow p-4 relative hover:shadow-lg transition duration-300 w-full">
-        <div class="absolute top-2 right-2 cursor-pointer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-            <path fill="#3f3f3f"
-              d="M17 22q-1.25 0-2.125-.875T14 19q0-.15.075-.7L7.05 14.2q-.4.375-.925.588T5 15q-1.25 0-2.125-.875T2 12t.875-2.125T5 9q.6 0 1.125.213t.925.587l7.025-4.1q-.05-.175-.062-.337T14 5q0-1.25.875-2.125T17 2t2.125.875T20 5t-.875 2.125T17 8q-.6 0-1.125-.213T14.95 7.2l-7.025 4.1q.05.175.063.338T8 12t-.012.363t-.063.337l7.025 4.1q.4-.375.925-.587T17 16q1.25 0 2.125.875T20 19t-.875 2.125T17 22m0-2q.425 0 .713-.287T18 19t-.288-.712T17 18t-.712.288T16 19t.288.713T17 20M5 13q.425 0 .713-.288T6 12t-.288-.712T5 11t-.712.288T4 12t.288.713T5 13m12-7q.425 0 .713-.288T18 5t-.288-.712T17 4t-.712.288T16 5t.288.713T17 6m0-1" />
-          </svg>
-        </div>
-        <img src="./static/images/product1.jpg" alt="Sofa" class="w-full h-64 object-cover rounded-md mb-4">
-        <h3 class="text-lg font-semibold">Modern Sofa</h3>
-        <p class="text-sm text-gray-500">Material: Leather</p>
-        <p class="text-base font-bold mt-1">₹18,999</p>
-        <button class="mt-4 w-full bg-[#bc9565] text-white py-2 rounded hover:bg-[#a27848] transition duration-300">
-          Detail View
-        </button>
-      </div>
-    </a>
+
+
+<a href="detail_product.html" class="min-w-full md:min-w-0 snap-start group relative">
+  <div class="bg-white rounded-xl shadow p-4 hover:shadow-lg transition duration-300 w-full">
+
+    <div class="absolute top-2 right-2 z-20 cursor-pointer" onclick="openShareModal(event)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+        <path fill="#3f3f3f"
+          d="M17 22q-1.25 0-2.125-.875T14 19q0-.15.075-.7L7.05 14.2q-.4.375-.925.588T5 15q-1.25 0-2.125-.875T2 12t.875-2.125T5 9q.6 0 1.125.213t.925.587l7.025-4.1q-.05-.175-.062-.337T14 5q0-1.25.875-2.125T17 2t2.125.875T20 5t-.875 2.125T17 8q-.6 0-1.125-.213T14.95 7.2l-7.025 4.1q.05.175.063.338T8 12t-.012.363t-.063.337l7.025 4.1q.4-.375.925-.587T17 16q1.25 0 2.125.875T20 19t-.875 2.125T17 22m0-2q.425 0 .713-.287T18 19t-.288-.712T17 18t-.712.288T16 19t.288.713T17 20M5 13q.425 0 .713-.288T6 12t-.288-.712T5 11t-.712.288T4 12t.288.713T5 13m12-7q.425 0 .713-.288T18 5t-.288-.712T17 4t-.712.288T16 5t.288.713T17 6m0-1" />
+      </svg>
+    </div>
+
+    <img src="./static/images/product1.jpg" alt="Sofa" class="w-full h-64 object-cover rounded-md mb-4 pointer-events-none">
+    <h3 class="text-lg font-semibold">Modern Sofa</h3>
+    <p class="text-sm text-gray-500">Material: Leather</p>
+    <p class="text-base font-bold mt-1">₹18,999</p>
+    <button class="mt-4 w-full bg-[#bc9565] text-white py-2 rounded hover:bg-[#a27848] transition duration-300">
+      Detail View
+    </button>
+  </div>
+</a>
+
+
+
+<a href="detail_product.html" class="min-w-full md:min-w-0 snap-start group relative">
+  <div class="bg-white rounded-xl shadow p-4 hover:shadow-lg transition duration-300 w-full">
+
+    <div class="absolute top-2 right-2 z-20 cursor-pointer" onclick="openShareModal(event)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+        <path fill="#3f3f3f"
+          d="M17 22q-1.25 0-2.125-.875T14 19q0-.15.075-.7L7.05 14.2q-.4.375-.925.588T5 15q-1.25 0-2.125-.875T2 12t.875-2.125T5 9q.6 0 1.125.213t.925.587l7.025-4.1q-.05-.175-.062-.337T14 5q0-1.25.875-2.125T17 2t2.125.875T20 5t-.875 2.125T17 8q-.6 0-1.125-.213T14.95 7.2l-7.025 4.1q.05.175.063.338T8 12t-.012.363t-.063.337l7.025 4.1q.4-.375.925-.587T17 16q1.25 0 2.125.875T20 19t-.875 2.125T17 22m0-2q.425 0 .713-.287T18 19t-.288-.712T17 18t-.712.288T16 19t.288.713T17 20M5 13q.425 0 .713-.288T6 12t-.288-.712T5 11t-.712.288T4 12t.288.713T5 13m12-7q.425 0 .713-.288T18 5t-.288-.712T17 4t-.712.288T16 5t.288.713T17 6m0-1" />
+      </svg>
+    </div>
+
+    <img src="./static/images/product1.jpg" alt="Sofa" class="w-full h-64 object-cover rounded-md mb-4 pointer-events-none">
+    <h3 class="text-lg font-semibold">Modern Sofa</h3>
+    <p class="text-sm text-gray-500">Material: Leather</p>
+    <p class="text-base font-bold mt-1">₹18,999</p>
+    <button class="mt-4 w-full bg-[#bc9565] text-white py-2 rounded hover:bg-[#a27848] transition duration-300">
+      Detail View
+    </button>
+  </div>
+</a>
+
+
+
+
+<a href="detail_product.html" class="min-w-full md:min-w-0 snap-start group relative">
+  <div class="bg-white rounded-xl shadow p-4 hover:shadow-lg transition duration-300 w-full">
+
+    <div class="absolute top-2 right-2 z-20 cursor-pointer" onclick="openShareModal(event)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+        <path fill="#3f3f3f"
+          d="M17 22q-1.25 0-2.125-.875T14 19q0-.15.075-.7L7.05 14.2q-.4.375-.925.588T5 15q-1.25 0-2.125-.875T2 12t.875-2.125T5 9q.6 0 1.125.213t.925.587l7.025-4.1q-.05-.175-.062-.337T14 5q0-1.25.875-2.125T17 2t2.125.875T20 5t-.875 2.125T17 8q-.6 0-1.125-.213T14.95 7.2l-7.025 4.1q.05.175.063.338T8 12t-.012.363t-.063.337l7.025 4.1q.4-.375.925-.587T17 16q1.25 0 2.125.875T20 19t-.875 2.125T17 22m0-2q.425 0 .713-.287T18 19t-.288-.712T17 18t-.712.288T16 19t.288.713T17 20M5 13q.425 0 .713-.288T6 12t-.288-.712T5 11t-.712.288T4 12t.288.713T5 13m12-7q.425 0 .713-.288T18 5t-.288-.712T17 4t-.712.288T16 5t.288.713T17 6m0-1" />
+      </svg>
+    </div>
+
+    <img src="./static/images/product1.jpg" alt="Sofa" class="w-full h-64 object-cover rounded-md mb-4 pointer-events-none">
+    <h3 class="text-lg font-semibold">Modern Sofa</h3>
+    <p class="text-sm text-gray-500">Material: Leather</p>
+    <p class="text-base font-bold mt-1">₹18,999</p>
+    <button class="mt-4 w-full bg-[#bc9565] text-white py-2 rounded hover:bg-[#a27848] transition duration-300">
+      Detail View
+    </button>
+  </div>
+</a>
+
 
     
     
@@ -252,6 +270,44 @@ With decades of design expertise, we create furniture that blends style, comfort
 
 </section>
 
+<div id="shareModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-50 flex items-center justify-center">
+  <div class="bg-white rounded-xl p-6 w-80 relative shadow-lg">
+    <button onclick="closeShareModal()" class="absolute top-2 right-2 text-gray-600 hover:text-black text-xl">&times;</button>
+    <h2 class="text-xl font-bold mb-6 text-center text-gray-800">Share this product</h2>
+
+    <div class="flex flex-col gap-4">
+
+      <a href="https://api.whatsapp.com/send?text=Check%20this%20product%20out:%20https://example.com/detail_product.html"
+         target="_blank"
+         class="flex items-center gap-3 px-4 py-2 rounded-lg bg-green-100 text-green-700 hover:bg-green-200 transition">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" class="w-6 h-6" />
+        <span>Share on WhatsApp</span>
+      </a>
+
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/detail_product.html"
+         target="_blank"
+         class="flex items-center gap-3 px-4 py-2 rounded-lg bg-blue-100 text-blue-700 hover:bg-blue-200 transition">
+        <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook" class="w-6 h-6" />
+        <span>Share on Facebook</span>
+      </a>
+
+      <a href="https://twitter.com/intent/tweet?url=https://example.com/detail_product.html"
+         target="_blank"
+         class="flex items-center gap-3 px-4 py-2 rounded-lg bg-sky-100 text-sky-700 hover:bg-sky-200 transition">
+        <img src="https://img.icons8.com/ios-filled/50/1DA1F2/twitter.png" alt="Twitter/X" class="w-6 h-6" />
+        <span>Share on X</span>
+      </a>
+
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://example.com/detail_product.html"
+         target="_blank"
+         class="flex items-center gap-3 px-4 py-2 rounded-lg bg-blue-50 text-blue-800 hover:bg-blue-100 transition">
+        <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn" class="w-6 h-6" />
+        <span>Share on LinkedIn</span>
+      </a>
+
+    </div>
+  </div>
+</div>
 
 
 
