@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - Cybexel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-[#151a37] font-sans">
+
+  <div class="flex min-h-screen">
+
+
+
+<div id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-[#bc9565] text-white p-6 z-50 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
+  <div class="flex items-center justify-between mb-6">
+    <div class="w-full bg-white flex justify-center">
+      <img src="./static/images/logo.png" alt="Logo" class="w-32 h-32 object-contain">
+    </div>
+    <button onclick="toggleSidebar()" class="md:hidden text-white text-2xl">&times;</button>
+  </div>
+  <nav>
+    <ul class="space-y-4 text-sm">
+      <li>
+        <a href="admin_dashboard.html" class="block py-2 px-4 rounded bg-white text-[#151a37]">Dashboard</a>
+      </li>
+      <li>
+        <a href="admin_productlisting.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">Product listing</a>
+      </li>
+      <li>
+        <a href="admin_contact.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">Contact Form Submissions</a>
+      </li>
+      <li>
+        <a href="{% url 'logout' %}" class="block py-2 px-4 rounded bg-[red] text-white">Logout</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<button onclick="toggleSidebar()" class="md:hidden fixed top-4 left-4 z-50 bg-[#bc9565] text-white p-2 rounded shadow-lg">
+  &#9776;
+</button>
+
+
+   
+<main class="flex-1 p-4 sm:p-6 ml-0 md:ml-64 bg-gray-100 overflow-x-hidden pt-32">
+  <!-- Summary Cards -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6">
+    <div class="bg-white p-4 rounded-lg shadow text-center text-sm sm:text-base">
+      <h2 class="text-base sm:text-lg font-semibold mb-1 text-[#bc9565]">Total Products</h2>
+      <p class="text-xl sm:text-2xl font-bold text-[#151a37]" id="totalProducts">12</p>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow text-center text-sm sm:text-base">
+      <h2 class="text-base sm:text-lg font-semibold mb-1 text-[#bc9565]">Total Enquiries</h2>
+      <p class="text-xl sm:text-2xl font-bold text-[#151a37]" id="totalEnquiries">8</p>
+    </div>
+  </div>
+
+  <!-- Enquiry Table (scrollable on mobile) -->
+  <div class="bg-white p-4 sm:p-6 rounded-lg shadow">
+    <h2 class="text-lg sm:text-xl font-semibold mb-4 text-[#151a37]">Enquiry List</h2>
+    
+    <div class="overflow-x-auto">
+      <table class="min-w-full text-sm text-left border border-gray-200">
+        <thead class="bg-[#bc9565] text-white">
+          <tr>
+            <th class="py-3 px-4 border whitespace-nowrap">Product Name</th>
+            <th class="py-3 px-4 border whitespace-nowrap">Material</th>
+            <th class="py-3 px-4 border whitespace-nowrap">Price</th>
+            <th class="py-3 px-4 border whitespace-nowrap">Color</th>
+            <th class="py-3 px-4 border whitespace-nowrap">Your Name</th>
+            <th class="py-3 px-4 border whitespace-nowrap">Contact Number</th>
+            <th class="py-3 px-4 border whitespace-nowrap">Action</th>
+          </tr>
+        </thead>
+        <tbody id="enquiryTableBody">
+          <tr class="hover:bg-gray-50">
+            <td class="py-2 px-4 border whitespace-nowrap">Sofa Set</td>
+            <td class="py-2 px-4 border whitespace-nowrap">Leather</td>
+            <td class="py-2 px-4 border whitespace-nowrap">₹25,000</td>
+            <td class="py-2 px-4 border whitespace-nowrap">Black</td>
+            <td class="py-2 px-4 border whitespace-nowrap">Rahul Verma</td>
+            <td class="py-2 px-4 border whitespace-nowrap">9876543210</td>
+            <td class="py-2 px-4 border">
+              <button onclick="deleteRow(this)" class="bg-red-500 hover:bg-red-600 text-white text-xs px-3 py-1 rounded">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+
+
+</div>
+<script src="./static/js/admin_scripts.js"></script>
+</body>
+</html>
