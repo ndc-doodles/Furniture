@@ -18,7 +18,7 @@ p {
     }
 
 h1{
-    font-family: 'Lato', sans-serif;
+     font-family: 'Marcellus', serif;
 }
 
 html,body{
@@ -46,3 +46,24 @@ html,body{
       display: none;           
     }
   }
+
+
+
+  @keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
