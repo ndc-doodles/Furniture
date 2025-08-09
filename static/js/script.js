@@ -1,46 +1,56 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const navbar = document.getElementById('navbar');
+  const brand = document.getElementById('brand');
+  const navLinks = document.getElementById('navLinks');
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeBtn = document.getElementById('closeBtn');
 
-
-
-
-
-
-
-const navbar = document.getElementById('navbar');
-    const brand = document.getElementById('brand');
-    const navLinks = document.getElementById('navLinks');
-    const menuBtn = document.getElementById('menuBtn');
-
+  // Scroll navbar color change
+  if (navbar) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 10) {
-        navbar.classList.add('backdrop-blur', 'bg-white/70', 'shadow-md');
-        brand.classList.replace('text-white', 'text-black');
-        navLinks.classList.replace('text-white', 'text-black');
-        menuBtn.classList.replace('text-white', 'text-black');
-      } else {
-        navbar.classList.remove('backdrop-blur', 'bg-white/70', 'shadow-md');
-        brand.classList.replace('text-black', 'text-white');
-        navLinks.classList.replace('text-black', 'text-white');
-        menuBtn.classList.replace('text-black', 'text-white');
-      }
+      const scrolled = window.scrollY > 10;
+      navbar.classList.toggle('backdrop-blur', scrolled);
+      navbar.classList.toggle('bg-white/70', scrolled);
+      navbar.classList.toggle('shadow-md', scrolled);
+
+      if (brand) brand.classList.toggle('text-black', scrolled);
+      if (brand) brand.classList.toggle('text-white', !scrolled);
+
+      if (navLinks) navLinks.classList.toggle('text-black', scrolled);
+      if (navLinks) navLinks.classList.toggle('text-white', !scrolled);
+
+      if (menuBtn) menuBtn.classList.toggle('text-black', scrolled);
+      if (menuBtn) menuBtn.classList.toggle('text-white', !scrolled);
     });
+  }
 
-    const mobileMenu = document.getElementById('mobileMenu');
-    const closeBtn = document.getElementById('closeBtn');
-
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.remove('hidden');
+  // Toggle mobile menu
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('hidden');
     });
+  }
 
-    closeBtn.addEventListener('click', () => {
+  // Close via close button
+  if (closeBtn && mobileMenu) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       mobileMenu.classList.add('hidden');
     });
+  }
 
-    // Close on outside click
+  // Close on outside click
+  if (mobileMenu && menuBtn) {
     document.addEventListener('click', (e) => {
       if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
         mobileMenu.classList.add('hidden');
       }
     });
+  }
+});
+
 
 
 
@@ -135,19 +145,19 @@ const navbar = document.getElementById('navbar');
 
 
 
+function openEnquiryModal(name, material, price, color, quantity) {
+  document.getElementById('productName').value = name;
+  document.getElementById('productMaterial').value = material;
+  document.getElementById('productPrice').value = price;
+  document.getElementById('productColor').value = color;
+  document.getElementById('productQuantity').value = quantity || 1;
+  document.getElementById('enquiryModal').classList.remove('hidden');
+}
 
-   function openEnquiryModal(name, material, price, color) {
-    document.getElementById('productName').value = name;
-    document.getElementById('productMaterial').value = material;
-    document.getElementById('productPrice').value = price;
-    document.getElementById('productColor').value = color;
+function closeEnquiryModal() {
+  document.getElementById('enquiryModal').classList.add('hidden');
+}
 
-    document.getElementById('enquiryModal').classList.remove('hidden');
-  }
-
-  function closeEnquiryModal() {
-    document.getElementById('enquiryModal').classList.add('hidden');
-  }
 
 
 
@@ -167,6 +177,30 @@ const navbar = document.getElementById('navbar');
   scrollRightBtn.addEventListener('click', () => {
     container.scrollBy({ left: container.clientWidth, behavior: 'smooth' });
   });
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.product-image').forEach(img => {
+    const originalSrc = img.getAttribute('src');
+    const hoverSrc = img.getAttribute('data-hover');
+
+    img.addEventListener('mouseenter', () => {
+      img.style.transition = 'opacity 0.3s ease'; // smooth fade
+      img.style.opacity = '0';
+      setTimeout(() => {
+        img.setAttribute('src', hoverSrc);
+        img.style.opacity = '1';
+      }, 150);
+    });
+
+    img.addEventListener('mouseleave', () => {
+      img.style.opacity = '0';
+      setTimeout(() => {
+        img.setAttribute('src', originalSrc);
+        img.style.opacity = '1';
+      }, 150);
+    });
+  });
+});
 
 
 
@@ -191,3 +225,58 @@ function openShareModal(event) {
       modal.classList.add('hidden');
     }
   });
+
+
+
+ 
+document.addEventListener('DOMContentLoaded', () => {
+  // Paths to images (relative to the HTML file, NOT the JS file)
+  const images = [
+    './static/images/headerbg2.png',
+    './static/images/about1.jpg',
+    './static/images/about2.jpg'
+  ];
+
+  const bg1 = document.getElementById('bg1');
+  const bg2 = document.getElementById('bg2');
+
+  if (!bg1 || !bg2) {
+    console.error('Background elements not found. Make sure #bg1 and #bg2 exist in HTML.');
+    return;
+  }
+
+  // Preload all images before starting slideshow
+  const preload = (src) => new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve();
+    img.onerror = () => resolve(); // even if it fails, skip
+    img.src = src;
+  });
+
+  Promise.all(images.map(preload)).then(() => {
+    let index = 0;
+    let showingBg1 = true;
+
+    // Initialize first background
+    bg1.style.backgroundImage = `url('${images[0]}')`;
+    bg1.style.opacity = '1';
+    bg2.style.opacity = '0';
+
+    setInterval(() => {
+      index = (index + 1) % images.length;
+
+      if (showingBg1) {
+        bg2.style.backgroundImage = `url('${images[index]}')`;
+        bg2.style.opacity = '1';
+        bg1.style.opacity = '0';
+      } else {
+        bg1.style.backgroundImage = `url('${images[index]}')`;
+        bg1.style.opacity = '1';
+        bg2.style.opacity = '0';
+      }
+
+      showingBg1 = !showingBg1;
+    }, 4000); // 4 seconds between changes
+  });
+});
+

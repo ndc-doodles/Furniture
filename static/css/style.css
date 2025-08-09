@@ -67,3 +67,8 @@ html,body{
 .delay-200 {
   animation-delay: 0.2s;
 }
+
+
+.product-image {
+  transition: opacity 0.3s ease-in-out;
+}

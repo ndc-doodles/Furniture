@@ -28,35 +28,112 @@
     <div class="absolute inset-0 bg-black bg-opacity-60"></div>
 
 <nav id="navbar" class="fixed top-0 left-0 w-full z-50 px-6 py-4 md:px-24 transition-all duration-300">
-    <div class="flex justify-between items-center">
-<a href="index.html" id="brand" class="transition-all block">
-  <img src="./static/images/logo.png" alt="FurniCraft Logo" class="h-10 md:h-12" />
-</a>
-      
-      <ul id="navLinks" class="hidden md:flex space-x-8 py-6 text-white text-[14px]  font-semibold uppercase transition-all">
-        <li><a href="index.html" class="hover:text-[#bc9565]">Home</a></li>
-        <li><a href="products.html" class="text-[#bc9565]">Our Products</a></li>
-        <li><a href="about.html" class="hover:text-[#bc9565]">About</a></li>
-        <li><a href="contact.html" class="hover:text-[#bc9565]">Contact</a></li>
-      </ul>
+  <div class="flex justify-between items-center w-full">
+    
+    <a href="index.html" id="brand" class="transition-all block">
+      <img src="./static/images/logo.png" alt="FurniCraft Logo" class="h-10 md:h-12" />
+    </a>
 
-      <div class="md:hidden z-50">
-        <button id="menuBtn" class="text-white text-2xl transition-all">&#9776;</button>
-      </div>
-    </div>
-  </nav>
-
-  <div id="mobileMenu" class="fixed top-0 right-0 h-full w-3/4 bg-black bg-opacity-95 text-white text-lg  z-[9999] hidden">
-    <div class="flex justify-end px-4 pt-4">
-      <button id="closeBtn" class="text-3xl font-bold focus:outline-none">&times;</button>
-    </div>
-    <ul class="flex flex-col items-start space-y-6 p-6 pt-10 uppercase text-[14px] font-semibold">
+    <ul id="navLinks" class="hidden md:flex items-center space-x-8 py-6 text-white text-[14px] font-semibold uppercase transition-all">
       <li><a href="index.html" class="hover:text-[#bc9565]">Home</a></li>
-      <li><a href="products.html" class="text-[#bc9565]">Our Products</a></li>
+      
+      <li class="relative group">
+  <a href="products.html" class="text-[#bc9565]">Our Products</a>
+
+ <ul class="text-white absolute left-0 top-full mt-2 bg-black/60 shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 grid grid-cols-4 gap-4 p-4 min-w-[500px]">
+  <li><a href="#" class="block hover:underline decoration-[#bc9565]">All</a></li>
+  <li><a href="#" class="block hover:underline decoration-[#bc9565]">Sofa</a></li>
+  <li><a href="#" class="block hover:underline decoration-[#bc9565]">Chair</a></li>
+  <li><a href="#" class="block hover:underline decoration-[#bc9565]">Table</a></li>
+  <li><a href="#" class="block hover:underline decoration-[#bc9565]">Bed</a></li>
+  <li><a href="#" class="block hover:underline decoration-[#bc9565]">Wardrobe</a></li>
+  <li><a href="#" class="block hover:underline decoration-[#bc9565]">Bookshelf</a></li>
+  <li><a href="#" class="block hover:underline decoration-[#bc9565]">TV Stand</a></li>
+  <li><a href="#" class="block hover:underline decoration-[#bc9565]">Outdoor</a></li>
+  <li><a href="#" class="block hover:underline decoration-[#bc9565]">Dining</a></li>
+  <li><a href="#" class="block hover:underline decoration-[#bc9565]">Office</a></li>
+  <li><a href="#" class="block hover:underline decoration-[#bc9565]">Storage</a></li>
+</ul>
+
+</li>
+
+
       <li><a href="about.html" class="hover:text-[#bc9565]">About</a></li>
       <li><a href="contact.html" class="hover:text-[#bc9565]">Contact</a></li>
+
+      <li>
+        <a href="tel:+1234567890" class="bg-[#bc9565] text-white px-3 py-2 rounded hover:bg-[#a07f52] transition-all">+1 234 567 890</a>
+      </li>
+
+     <li class="flex space-x-4 items-center">
+  <a href="#" class="hover:text-[#bc9565]">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"/>
+    </svg>
+  </a>
+
+  <a href="#" class="hover:text-[#bc9565]">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+      <circle cx="17" cy="7" r="1.5" fill="currentColor"/>
+      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        <path d="M16 3c2.76 0 5 2.24 5 5v8c0 2.76-2.24 5-5 5h-8c-2.76 0-5-2.24-5-5v-8c0-2.76 2.24-5 5-5h4Z"/>
+        <path d="M12 8c2.21 0 4 1.79 4 4c0 2.21-1.79 4-4 4c-2.21 0-4-1.79-4-4c0-2.21 1.79-4 4-4"/>
+      </g>
+    </svg>
+  </a>
+
+  <a href="#" class="hover:text-[#bc9565]">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"/>
+    </svg>
+  </a>
+</li>
+
+
     </ul>
+
+    <div class="md:hidden z-50">
+      <button id="menuBtn" class="text-white text-2xl transition-all">&#9776;</button>
+    </div>
   </div>
+</nav>
+
+<div id="mobileMenu" class="fixed top-0 right-0 h-full w-3/4 bg-black bg-opacity-95 text-white text-lg z-[9999] hidden">
+  <div class="flex justify-end px-4 pt-4">
+    <button id="closeBtn" class="text-3xl font-bold focus:outline-none">&times;</button>
+  </div>
+  <ul class="flex flex-col items-start space-y-6 p-6 pt-10 uppercase text-[14px] font-semibold">
+    <li><a href="index.html" class="hover:text-[#bc9565]">Home</a></li>
+    <li><a href="products.html" class="text-[#bc9565]">Our Products</a></li>
+    <li><a href="about.html" class="hover:text-[#bc9565]">About</a></li>
+    <li><a href="contact.html" class="hover:text-[#bc9565]">Contact</a></li>
+    <li><a href="tel:+1234567890" class="bg-[#bc9565] text-white px-3 py-1 rounded hover:bg-[#a07f52] transition-all">+1 234 567 890</a></li>
+    
+     <li class="flex space-x-4 items-center">
+  <a href="#" class="hover:text-[#bc9565]">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"/>
+    </svg>
+  </a>
+
+  <a href="#" class="hover:text-[#bc9565]">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+      <circle cx="17" cy="7" r="1.5" fill="currentColor"/>
+      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        <path d="M16 3c2.76 0 5 2.24 5 5v8c0 2.76-2.24 5-5 5h-8c-2.76 0-5-2.24-5-5v-8c0-2.76 2.24-5 5-5h4Z"/>
+        <path d="M12 8c2.21 0 4 1.79 4 4c0 2.21-1.79 4-4 4c-2.21 0-4-1.79-4-4c0-2.21 1.79-4 4-4"/>
+      </g>
+    </svg>
+  </a>
+
+  <a href="#" class="hover:text-[#bc9565]">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"/>
+    </svg>
+  </a>
+</li>
+  </ul>
+</div>
 
 
     <div class="relative z-10 flex flex-col justify-center items-center h-full px-6 md:px-20 text-white text-center">
@@ -79,24 +156,74 @@
     <p class="text-gray-500 text-md">Discover furniture that combines elegance, quality and comfort for every space.</p>
   </div>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+
+<section class="bg-white  rounded-lg p-4 mb-8">
+  <h1 class="text-xl font-bold text-[#2e2e2e] mb-4">Filter Products</h1>
+
+  <div class="flex flex-wrap gap-4">
+    <div class="w-48">
+      <label for="category" class="block text-sm font-semibold text-[#2e2e2e] mb-1">Category</label>
+      <select id="category" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-[#bc9565]">
+        <option value="">All</option>
+        <option value="sofa">Sofa</option>
+        <option value="chair">Chair</option>
+        <option value="table">Table</option>
+        <option value="bed">Bed</option>
+      </select>
+    </div>
+
+    <div class="w-48">
+      <label for="material" class="block text-sm font-semibold text-[#2e2e2e] mb-1">Material</label>
+      <select id="material" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-[#bc9565]">
+        <option value="">All</option>
+        <option value="leather">Leather</option>
+        <option value="fabric">Fabric</option>
+        <option value="wood">Wood</option>
+        <option value="metal">Metal</option>
+      </select>
+    </div>
+
     
 
+    <div class="flex items-end">
+      <button class="bg-[#bc9565] text-white px-4 py-2 rounded hover:bg-[#a27848] transition">
+        Apply
+      </button>
+    </div>
+  </div>
+</section>
 
-   <a href="detail_product.html" class="min-w-full md:min-w-0 snap-start group relative">
+
+
+
+  
+   <div id="cardContainer" class="hide-scrollbar flex md:grid md:grid-cols-2 lg:grid-cols-4 overflow-x-auto md:overflow-visible gap-6 scroll-smooth snap-x snap-mandatory px-1 md:px-0">
+    
+<a href="detail_product.html" class="min-w-full md:min-w-0 snap-start group relative">
   <div class="bg-white rounded-xl shadow p-4 hover:shadow-lg transition duration-300 w-full">
 
-    <div class="absolute top-2 right-2 z-20 cursor-pointer" onclick="openShareModal(event)">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-        <path fill="#3f3f3f"
-          d="M17 22q-1.25 0-2.125-.875T14 19q0-.15.075-.7L7.05 14.2q-.4.375-.925.588T5 15q-1.25 0-2.125-.875T2 12t.875-2.125T5 9q.6 0 1.125.213t.925.587l7.025-4.1q-.05-.175-.062-.337T14 5q0-1.25.875-2.125T17 2t2.125.875T20 5t-.875 2.125T17 8q-.6 0-1.125-.213T14.95 7.2l-7.025 4.1q.05.175.063.338T8 12t-.012.363t-.063.337l7.025 4.1q.4-.375.925-.587T17 16q1.25 0 2.125.875T20 19t-.875 2.125T17 22m0-2q.425 0 .713-.287T18 19t-.288-.712T17 18t-.712.288T16 19t.288.713T17 20M5 13q.425 0 .713-.288T6 12t-.288-.712T5 11t-.712.288T4 12t.288.713T5 13m12-7q.425 0 .713-.288T18 5t-.288-.712T17 4t-.712.288T16 5t.288.713T17 6m0-1" />
+    <div class="absolute top-2 right-2 z-20 cursor-pointer bg-white rounded-full w-8 h-8 flex items-center justify-center shadow hover:shadow-md hover:bg-gray-100 transition duration-300" onclick="openShareModal(event)">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="#3f3f3f">
+        <path d="M17 22q-1.25 0-2.125-.875T14 19q0-.15.075-.7L7.05 14.2q-.4.375-.925.588T5 15q-1.25 0-2.125-.875T2 12t.875-2.125T5 9q.6 0 1.125.213t.925.587l7.025-4.1q-.05-.175-.062-.337T14 5q0-1.25.875-2.125T17 2t2.125.875T20 5t-.875 2.125T17 8q-.6 0-1.125-.213T14.95 7.2l-7.025 4.1q.05.175.063.338T8 12t-.012.363t-.063.337l7.025 4.1q.4-.375.925-.587T17 16q1.25 0 2.125.875T20 19t-.875 2.125T17 22m0-2q.425 0 .713-.287T18 19t-.288-.712T17 18t-.712.288T16 19t.288.713T17 20M5 13q.425 0 .713-.288T6 12t-.288-.712T5 11t-.712.288T4 12t.288.713T5 13m12-7q.425 0 .713-.288T18 5t-.288-.712T17 4t-.712.288T16 5t.288.713T17 6m0-1" />
       </svg>
     </div>
 
-    <img src="./static/images/product1.jpg" alt="Sofa" class="w-full h-64 object-cover rounded-md mb-4 pointer-events-none">
+    <img 
+      src="./static/images/product1.jpg" 
+      data-hover="./static/images/about1.jpg"
+      alt="Sofa" 
+      class="product-image w-full h-64 object-cover rounded-md mb-4">
+
     <h3 class="text-lg font-semibold">Modern Sofa</h3>
     <p class="text-sm text-gray-500">Material: Leather</p>
-    <p class="text-base font-bold mt-1">₹18,999</p>
+
+    <div class="mt-1 flex items-center gap-2">
+      <span class="text-base font-bold text-[#bc9565]">₹14,999</span> 
+      <span class="text-sm text-gray-400 line-through">₹18,999</span> 
+      <span class="text-sm text-[red] font-medium">21% off</span> 
+    </div>
+
     <button class="mt-4 w-full bg-[#bc9565] text-white py-2 rounded hover:bg-[#a27848] transition duration-300">
       Detail View
     </button>
@@ -106,38 +233,27 @@
 <a href="detail_product.html" class="min-w-full md:min-w-0 snap-start group relative">
   <div class="bg-white rounded-xl shadow p-4 hover:shadow-lg transition duration-300 w-full">
 
-    <div class="absolute top-2 right-2 z-20 cursor-pointer" onclick="openShareModal(event)">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-        <path fill="#3f3f3f"
-          d="M17 22q-1.25 0-2.125-.875T14 19q0-.15.075-.7L7.05 14.2q-.4.375-.925.588T5 15q-1.25 0-2.125-.875T2 12t.875-2.125T5 9q.6 0 1.125.213t.925.587l7.025-4.1q-.05-.175-.062-.337T14 5q0-1.25.875-2.125T17 2t2.125.875T20 5t-.875 2.125T17 8q-.6 0-1.125-.213T14.95 7.2l-7.025 4.1q.05.175.063.338T8 12t-.012.363t-.063.337l7.025 4.1q.4-.375.925-.587T17 16q1.25 0 2.125.875T20 19t-.875 2.125T17 22m0-2q.425 0 .713-.287T18 19t-.288-.712T17 18t-.712.288T16 19t.288.713T17 20M5 13q.425 0 .713-.288T6 12t-.288-.712T5 11t-.712.288T4 12t.288.713T5 13m12-7q.425 0 .713-.288T18 5t-.288-.712T17 4t-.712.288T16 5t.288.713T17 6m0-1" />
+    <div class="absolute top-2 right-2 z-20 cursor-pointer bg-white rounded-full w-8 h-8 flex items-center justify-center shadow hover:shadow-md hover:bg-gray-100 transition duration-300" onclick="openShareModal(event)">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="#3f3f3f">
+        <path d="M17 22q-1.25 0-2.125-.875T14 19q0-.15.075-.7L7.05 14.2q-.4.375-.925.588T5 15q-1.25 0-2.125-.875T2 12t.875-2.125T5 9q.6 0 1.125.213t.925.587l7.025-4.1q-.05-.175-.062-.337T14 5q0-1.25.875-2.125T17 2t2.125.875T20 5t-.875 2.125T17 8q-.6 0-1.125-.213T14.95 7.2l-7.025 4.1q.05.175.063.338T8 12t-.012.363t-.063.337l7.025 4.1q.4-.375.925-.587T17 16q1.25 0 2.125.875T20 19t-.875 2.125T17 22m0-2q.425 0 .713-.287T18 19t-.288-.712T17 18t-.712.288T16 19t.288.713T17 20M5 13q.425 0 .713-.288T6 12t-.288-.712T5 11t-.712.288T4 12t.288.713T5 13m12-7q.425 0 .713-.288T18 5t-.288-.712T17 4t-.712.288T16 5t.288.713T17 6m0-1" />
       </svg>
     </div>
 
-    <img src="./static/images/product1.jpg" alt="Sofa" class="w-full h-64 object-cover rounded-md mb-4 pointer-events-none">
+    <img 
+      src="./static/images/product1.jpg" 
+      data-hover="./static/images/about1.jpg"
+      alt="Sofa" 
+      class="product-image w-full h-64 object-cover rounded-md mb-4">
+
     <h3 class="text-lg font-semibold">Modern Sofa</h3>
     <p class="text-sm text-gray-500">Material: Leather</p>
-    <p class="text-base font-bold mt-1">₹18,999</p>
-    <button class="mt-4 w-full bg-[#bc9565] text-white py-2 rounded hover:bg-[#a27848] transition duration-300">
-      Detail View
-    </button>
-  </div>
-</a>
 
-
-<a href="detail_product.html" class="min-w-full md:min-w-0 snap-start group relative">
-  <div class="bg-white rounded-xl shadow p-4 hover:shadow-lg transition duration-300 w-full">
-
-    <div class="absolute top-2 right-2 z-20 cursor-pointer" onclick="openShareModal(event)">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-        <path fill="#3f3f3f"
-          d="M17 22q-1.25 0-2.125-.875T14 19q0-.15.075-.7L7.05 14.2q-.4.375-.925.588T5 15q-1.25 0-2.125-.875T2 12t.875-2.125T5 9q.6 0 1.125.213t.925.587l7.025-4.1q-.05-.175-.062-.337T14 5q0-1.25.875-2.125T17 2t2.125.875T20 5t-.875 2.125T17 8q-.6 0-1.125-.213T14.95 7.2l-7.025 4.1q.05.175.063.338T8 12t-.012.363t-.063.337l7.025 4.1q.4-.375.925-.587T17 16q1.25 0 2.125.875T20 19t-.875 2.125T17 22m0-2q.425 0 .713-.287T18 19t-.288-.712T17 18t-.712.288T16 19t.288.713T17 20M5 13q.425 0 .713-.288T6 12t-.288-.712T5 11t-.712.288T4 12t.288.713T5 13m12-7q.425 0 .713-.288T18 5t-.288-.712T17 4t-.712.288T16 5t.288.713T17 6m0-1" />
-      </svg>
+    <div class="mt-1 flex items-center gap-2">
+      <span class="text-base font-bold text-[#bc9565]">₹14,999</span> 
+      <span class="text-sm text-gray-400 line-through">₹18,999</span> 
+      <span class="text-sm text-[red] font-medium">21% off</span> 
     </div>
 
-    <img src="./static/images/product1.jpg" alt="Sofa" class="w-full h-64 object-cover rounded-md mb-4 pointer-events-none">
-    <h3 class="text-lg font-semibold">Modern Sofa</h3>
-    <p class="text-sm text-gray-500">Material: Leather</p>
-    <p class="text-base font-bold mt-1">₹18,999</p>
     <button class="mt-4 w-full bg-[#bc9565] text-white py-2 rounded hover:bg-[#a27848] transition duration-300">
       Detail View
     </button>
@@ -147,17 +263,57 @@
 <a href="detail_product.html" class="min-w-full md:min-w-0 snap-start group relative">
   <div class="bg-white rounded-xl shadow p-4 hover:shadow-lg transition duration-300 w-full">
 
-    <div class="absolute top-2 right-2 z-20 cursor-pointer" onclick="openShareModal(event)">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-        <path fill="#3f3f3f"
-          d="M17 22q-1.25 0-2.125-.875T14 19q0-.15.075-.7L7.05 14.2q-.4.375-.925.588T5 15q-1.25 0-2.125-.875T2 12t.875-2.125T5 9q.6 0 1.125.213t.925.587l7.025-4.1q-.05-.175-.062-.337T14 5q0-1.25.875-2.125T17 2t2.125.875T20 5t-.875 2.125T17 8q-.6 0-1.125-.213T14.95 7.2l-7.025 4.1q.05.175.063.338T8 12t-.012.363t-.063.337l7.025 4.1q.4-.375.925-.587T17 16q1.25 0 2.125.875T20 19t-.875 2.125T17 22m0-2q.425 0 .713-.287T18 19t-.288-.712T17 18t-.712.288T16 19t.288.713T17 20M5 13q.425 0 .713-.288T6 12t-.288-.712T5 11t-.712.288T4 12t.288.713T5 13m12-7q.425 0 .713-.288T18 5t-.288-.712T17 4t-.712.288T16 5t.288.713T17 6m0-1" />
+    <div class="absolute top-2 right-2 z-20 cursor-pointer bg-white rounded-full w-8 h-8 flex items-center justify-center shadow hover:shadow-md hover:bg-gray-100 transition duration-300" onclick="openShareModal(event)">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="#3f3f3f">
+        <path d="M17 22q-1.25 0-2.125-.875T14 19q0-.15.075-.7L7.05 14.2q-.4.375-.925.588T5 15q-1.25 0-2.125-.875T2 12t.875-2.125T5 9q.6 0 1.125.213t.925.587l7.025-4.1q-.05-.175-.062-.337T14 5q0-1.25.875-2.125T17 2t2.125.875T20 5t-.875 2.125T17 8q-.6 0-1.125-.213T14.95 7.2l-7.025 4.1q.05.175.063.338T8 12t-.012.363t-.063.337l7.025 4.1q.4-.375.925-.587T17 16q1.25 0 2.125.875T20 19t-.875 2.125T17 22m0-2q.425 0 .713-.287T18 19t-.288-.712T17 18t-.712.288T16 19t.288.713T17 20M5 13q.425 0 .713-.288T6 12t-.288-.712T5 11t-.712.288T4 12t.288.713T5 13m12-7q.425 0 .713-.288T18 5t-.288-.712T17 4t-.712.288T16 5t.288.713T17 6m0-1" />
       </svg>
     </div>
 
-    <img src="./static/images/product1.jpg" alt="Sofa" class="w-full h-64 object-cover rounded-md mb-4 pointer-events-none">
+    <img 
+      src="./static/images/product1.jpg" 
+      data-hover="./static/images/about1.jpg"
+      alt="Sofa" 
+      class="product-image w-full h-64 object-cover rounded-md mb-4">
+
     <h3 class="text-lg font-semibold">Modern Sofa</h3>
     <p class="text-sm text-gray-500">Material: Leather</p>
-    <p class="text-base font-bold mt-1">₹18,999</p>
+
+    <div class="mt-1 flex items-center gap-2">
+      <span class="text-base font-bold text-[#bc9565]">₹14,999</span> 
+      <span class="text-sm text-gray-400 line-through">₹18,999</span> 
+      <span class="text-sm text-[red] font-medium">21% off</span> 
+    </div>
+
+    <button class="mt-4 w-full bg-[#bc9565] text-white py-2 rounded hover:bg-[#a27848] transition duration-300">
+      Detail View
+    </button>
+  </div>
+</a>
+
+<a href="detail_product.html" class="min-w-full md:min-w-0 snap-start group relative">
+  <div class="bg-white rounded-xl shadow p-4 hover:shadow-lg transition duration-300 w-full">
+
+    <div class="absolute top-2 right-2 z-20 cursor-pointer bg-white rounded-full w-8 h-8 flex items-center justify-center shadow hover:shadow-md hover:bg-gray-100 transition duration-300" onclick="openShareModal(event)">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="#3f3f3f">
+        <path d="M17 22q-1.25 0-2.125-.875T14 19q0-.15.075-.7L7.05 14.2q-.4.375-.925.588T5 15q-1.25 0-2.125-.875T2 12t.875-2.125T5 9q.6 0 1.125.213t.925.587l7.025-4.1q-.05-.175-.062-.337T14 5q0-1.25.875-2.125T17 2t2.125.875T20 5t-.875 2.125T17 8q-.6 0-1.125-.213T14.95 7.2l-7.025 4.1q.05.175.063.338T8 12t-.012.363t-.063.337l7.025 4.1q.4-.375.925-.587T17 16q1.25 0 2.125.875T20 19t-.875 2.125T17 22m0-2q.425 0 .713-.287T18 19t-.288-.712T17 18t-.712.288T16 19t.288.713T17 20M5 13q.425 0 .713-.288T6 12t-.288-.712T5 11t-.712.288T4 12t.288.713T5 13m12-7q.425 0 .713-.288T18 5t-.288-.712T17 4t-.712.288T16 5t.288.713T17 6m0-1" />
+      </svg>
+    </div>
+
+    <img 
+      src="./static/images/product1.jpg" 
+      data-hover="./static/images/about1.jpg"
+      alt="Sofa" 
+      class="product-image w-full h-64 object-cover rounded-md mb-4">
+
+    <h3 class="text-lg font-semibold">Modern Sofa</h3>
+    <p class="text-sm text-gray-500">Material: Leather</p>
+
+    <div class="mt-1 flex items-center gap-2">
+      <span class="text-base font-bold text-[#bc9565]">₹14,999</span> 
+      <span class="text-sm text-gray-400 line-through">₹18,999</span> 
+      <span class="text-sm text-[red] font-medium">21% off</span> 
+    </div>
+
     <button class="mt-4 w-full bg-[#bc9565] text-white py-2 rounded hover:bg-[#a27848] transition duration-300">
       Detail View
     </button>
@@ -165,6 +321,8 @@
 </a>
 
 
+    
+    
   </div>
 
 
@@ -210,7 +368,44 @@
 </div>
 
 
-  <footer class="bg-black text-white px-6 md:px-20 py-20 mt-20">
+
+
+
+
+
+
+
+<section class="py-12 mt-12 bg-white max-md:px-6">
+  <div class="max-w-5xl mx-auto px-4 text-center">
+    <h1 class="text-2xl md:text-4xl font-bold mb-4">Discover the Art of Comfortable Living</h1>
+    <p class="text-gray-600 leading-relaxed mb-6">
+      At <span class="font-semibold">FurniStyle</span>, we believe your home deserves more than just furniture -
+      it deserves pieces that tell a story. Our curated collection blends timeless craftsmanship with modern design,
+      ensuring every product not only looks stunning but also lasts for years to come.
+    </p>
+    <p class="text-gray-600 leading-relaxed mb-8">
+      Whether you’re upgrading your living room, dining space, or bedroom, you’ll find designs that reflect
+      your personality and bring warmth to every corner. Browse through our handpicked range and create a
+      home you’ll love coming back to.
+    </p>
+    <a href="about.html" 
+       class="inline-block bg-[#bc9565] text-white px-6 py-3 rounded-lg hover:bg-[#a27848] transition duration-300">
+      Learn More About Us
+    </a>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+  <footer class="bg-black text-white px-6 md:px-20 py-20 mt-10">
   <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
     <div>
       <img src="/static/images/logo11.png" alt="Logo" class="w-44 mb-4">
@@ -264,7 +459,32 @@
     © 2025 All Rights Reserved. Powered by <span class="text-white font-semibold">Cybexel</span>
   </div>
 </footer>
+<script>
+  
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.product-image').forEach(img => {
+    const originalSrc = img.getAttribute('src');
+    const hoverSrc = img.getAttribute('data-hover');
 
+    img.addEventListener('mouseenter', () => {
+      img.style.transition = 'opacity 0.3s ease'; 
+      img.style.opacity = '0';
+      setTimeout(() => {
+        img.setAttribute('src', hoverSrc);
+        img.style.opacity = '1';
+      }, 150);
+    });
+
+    img.addEventListener('mouseleave', () => {
+      img.style.opacity = '0';
+      setTimeout(() => {
+        img.setAttribute('src', originalSrc);
+        img.style.opacity = '1';
+      }, 150);
+    });
+  });
+});
+</script>
   <script src="./static/js/script.js"></script>
 </body>
 </html>
