@@ -29,10 +29,10 @@
         <a href="admin_productlisting.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">Product listing</a>
       </li>
       <li>
-        <a href="admin_enquiry.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">Enquiry Form Submissions</a>
+        <a href="admin_enquiry.html" class="block py-2 px-4 rounded bg-white text-[#151a37]">Enquiry Form Submissions</a>
       </li>
       <li>
-        <a href="admin_contact.html" class="block py-2 px-4 rounded bg-white text-[#151a37]">Contact Form Submissions</a>
+        <a href="admin_contact.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">Contact Form Submissions</a>
       </li>
       <li>
         <a href="{% url 'logout' %}" class="block py-2 px-4 rounded bg-[red] text-white">Logout</a>
@@ -46,25 +46,31 @@
 
 
  <div class="flex-1 ml-0 md:ml-64 p-6">
-      <h2 class="text-2xl font-semibold mb-6">Contact Form Submissions</h2>
+      <h2 class="text-2xl font-semibold mb-6">Enquiry Form Submissions</h2>
 
       <div class="overflow-x-auto">
         <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
           <thead class="bg-[#bc9565] text-white">
             <tr>
-              <th class="py-3 px-6 text-left">Name</th>
-              <th class="py-3 px-6 text-left">Email</th>
-              <th class="py-3 px-6 text-left">Subject</th>
-              <th class="py-3 px-6 text-left">Message</th>
-              <th class="py-3 px-6 text-center">Actions</th>
+              <th class="py-3 px-6 text-left">Product Name</th>
+              <th class="py-3 px-6 text-left">Material</th>
+              <th class="py-3 px-6 text-left">Price</th>
+              <th class="py-3 px-6 text-left">Color</th>
+              <th class="py-3 px-6 text-center">Quantity</th>
+              <th class="py-3 px-6 text-center">Your Name</th>
+              <th class="py-3 px-6 text-center">Contact Number</th>
+              <th class="py-3 px-6 text-center">Action</th>
             </tr>
           </thead>
           <tbody id="contactTableBody">
             <tr class="border-b">
-              <td class="py-3 px-6">John Doe</td>
-              <td class="py-3 px-6">john@example.com</td>
-              <td class="py-3 px-6">Product Inquiry</td>
-              <td class="py-3 px-6">I want to know more about your office desks.</td>
+              <td class="py-3 px-6">Modern Leather Sofa</td>
+              <td class="py-3 px-6">Premium Leather</td>
+              <td class="py-3 px-6">₹45,000</td>
+              <td class="py-3 px-6">Dark Grey</td>
+              <td class="py-3 px-6">1</td>
+              <td class="py-3 px-6">name</td>
+              <td class="py-3 px-6">contact number</td>
               <td class="py-3 px-6 text-center">
                 <button onclick="deleteRow(this)" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Delete</button>
               </td>
