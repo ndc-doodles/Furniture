@@ -67,9 +67,9 @@
     </button>
   </form>
 
-  <div class="mt-8 overflow-x-auto">
-    <table id="productTable" class="w-full min-w-[1300px] table-auto border border-gray-200">
-      <thead class="bg-[#bc9565] text-white text-sm">
+<div class="overflow-x-auto">
+    <table id="productTable" class="w-full min-w-[1300px] border border-gray-200 text-sm">
+      <thead class="bg-[#bc9565] text-white">
         <tr>
           <th class="p-2 text-left">Image</th>
           <th class="p-2 text-left">Name</th>
@@ -85,146 +85,124 @@
           <th class="p-2 text-left">Actions</th>
         </tr>
       </thead>
-      <tbody class="bg-white text-sm"></tbody>
+      <tbody class="bg-white">
+        <tr>
+          <td class="p-2"><img src="https://via.placeholder.com/50" class="h-12 rounded"></td>
+          <td class="p-2">Sofa Set</td>
+          <td class="p-2">15000</td>
+          <td class="p-2">Leather</td>
+          <td class="p-2">6x4 ft</td>
+          <td class="p-2">Brown</td>
+          <td class="p-2">20kg</td>
+          <td class="p-2">3</td>
+          <td class="p-2">2 years</td>
+          <td class="p-2">In Stock</td>
+          <td class="p-2">7 days</td>
+          <td class="p-2 space-x-2">
+            <button class="bg-blue-500 text-white px-2 py-1 rounded text-xs" onclick="editRow(this)">Edit</button>
+            <button class="bg-red-500 text-white px-2 py-1 rounded text-xs" onclick="deleteRow(this)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </div>
 
 <div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
-  <div class="bg-white p-6 rounded-lg w-[90%] max-w-3xl">
-    <h2 class="text-lg font-bold mb-4">Edit Product</h2>
-    <form id="editProductForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <input type="text" id="editName" class="border p-2 rounded" placeholder="Product Name" />
-      <input type="number" id="editPrice" class="border p-2 rounded" placeholder="Price" />
-      <input type="text" id="editMaterial" class="border p-2 rounded" placeholder="Material" />
-      <input type="text" id="editDimensions" class="border p-2 rounded" placeholder="Dimensions" />
-      <input type="text" id="editColor" class="border p-2 rounded" placeholder="Color" />
-      <input type="text" id="editWeight" class="border p-2 rounded" placeholder="Weight" />
-      <input type="text" id="editSeating" class="border p-2 rounded" placeholder="Seating Capacity" />
-      <input type="text" id="editWarranty" class="border p-2 rounded" placeholder="Warranty" />
-      <input type="text" id="editAvailability" class="border p-2 rounded" placeholder="Availability" />
-      <input type="text" id="editReturnPolicy" class="border p-2 rounded" placeholder="Return Policy" />
-      <input type="file" id="editImageInput" accept="image/*" class="border p-2 rounded w-full md:col-span-2" />
-      <img id="editPreviewImage" class="mt-2 max-h-24 md:col-span-2" />
+    <div class="bg-white p-6 rounded-lg w-[90%] max-w-3xl">
+      <h2 class="text-lg font-bold mb-4">Edit Product</h2>
+      <form id="editProductForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="text" id="editName" class="border p-2 rounded" placeholder="Product Name" />
+        <input type="number" id="editPrice" class="border p-2 rounded" placeholder="Price" />
+        <input type="text" id="editMaterial" class="border p-2 rounded" placeholder="Material" />
+        <input type="text" id="editDimensions" class="border p-2 rounded" placeholder="Dimensions" />
+        <input type="text" id="editColor" class="border p-2 rounded" placeholder="Color" />
+        <input type="text" id="editWeight" class="border p-2 rounded" placeholder="Weight" />
+        <input type="text" id="editSeating" class="border p-2 rounded" placeholder="Seating Capacity" />
+        <input type="text" id="editWarranty" class="border p-2 rounded" placeholder="Warranty" />
+        <input type="text" id="editAvailability" class="border p-2 rounded" placeholder="Availability" />
+        <input type="text" id="editReturnPolicy" class="border p-2 rounded" placeholder="Return Policy" />
+        <input type="file" id="editImageInput" accept="image/*" class="border p-2 rounded w-full md:col-span-2" />
+        <img id="editPreviewImage" class="mt-2 max-h-24 md:col-span-2" />
 
-      <div class="md:col-span-2 flex justify-end gap-2 mt-4">
-        <button type="button" onclick="closeEditModal()" class="px-4 py-2 bg-gray-400 text-white rounded">Cancel</button>
-        <button type="submit" class="px-4 py-2 bg-[#bc9565] text-white rounded">Update</button>
-      </div>
-    </form>
+        <div class="md:col-span-2 flex justify-end gap-2 mt-4">
+          <button type="button" onclick="closeEditModal()" class="px-4 py-2 bg-gray-400 text-white rounded">Cancel</button>
+          <button type="submit" class="px-4 py-2 bg-[#bc9565] text-white rounded">Update</button>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
 
-<script>
-  const form = document.getElementById("productForm");
-  const tableBody = document.querySelector("#productTable tbody");
-  let editIndex = null;
-  let imageData = null;
-  let editImageData = null;
+  <script>
+    let editIndex = null;
+    let editImageData = null;
+    const tableBody = document.querySelector("#productTable tbody");
 
-  document.getElementById("imageInput").addEventListener("change", (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        imageData = reader.result;
-        document.getElementById("previewImage").src = imageData;
-        document.getElementById("previewImage").classList.remove("hidden");
-      };
-      reader.readAsDataURL(file);
+    // Edit Button Click
+    function editRow(btn) {
+      const row = btn.closest("tr");
+      editIndex = row.rowIndex - 1;
+      const cells = row.children;
+
+      document.getElementById("editPreviewImage").src = cells[0].querySelector("img").src;
+      document.getElementById("editName").value = cells[1].textContent;
+      document.getElementById("editPrice").value = cells[2].textContent;
+      document.getElementById("editMaterial").value = cells[3].textContent;
+      document.getElementById("editDimensions").value = cells[4].textContent;
+      document.getElementById("editColor").value = cells[5].textContent;
+      document.getElementById("editWeight").value = cells[6].textContent;
+      document.getElementById("editSeating").value = cells[7].textContent;
+      document.getElementById("editWarranty").value = cells[8].textContent;
+      document.getElementById("editAvailability").value = cells[9].textContent;
+      document.getElementById("editReturnPolicy").value = cells[10].textContent;
+      editImageData = cells[0].querySelector("img").src;
+
+      document.getElementById("editModal").classList.remove("hidden");
+      document.getElementById("editModal").classList.add("flex");
     }
-  });
 
-  document.getElementById("editImageInput").addEventListener("change", (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        editImageData = reader.result;
-        document.getElementById("editPreviewImage").src = editImageData;
-      };
-      reader.readAsDataURL(file);
+    // Delete Button Click
+    function deleteRow(btn) {
+      btn.closest("tr").remove();
     }
-  });
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const data = new FormData(form);
-    const row = document.createElement("tr");
+    // Close Modal
+    function closeEditModal() {
+      document.getElementById("editModal").classList.add("hidden");
+    }
 
-    row.innerHTML = `
-      <td class="p-2"><img src="${imageData || ''}" class="h-12 rounded" /></td>
-      <td class="p-2">${data.get("productName")}</td>
-      <td class="p-2">${data.get("price")}</td>
-      <td class="p-2">${data.get("material")}</td>
-      <td class="p-2">${data.get("dimensions")}</td>
-      <td class="p-2">${data.get("color")}</td>
-      <td class="p-2">${data.get("weight")}</td>
-      <td class="p-2">${data.get("seatingCapacity")}</td>
-      <td class="p-2">${data.get("warranty")}</td>
-      <td class="p-2">${data.get("availability")}</td>
-      <td class="p-2">${data.get("returnPolicy")}</td>
-      <td class="p-2 space-x-2">
-        <button class="bg-blue-500 text-white px-2 py-1 rounded text-xs" onclick="editRow(this)">Edit</button>
-        <button class="bg-red-500 text-white px-2 py-1 rounded text-xs" onclick="deleteRow(this)">Delete</button>
-      </td>
-    `;
+    // Image Change in Edit
+    document.getElementById("editImageInput").addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          editImageData = reader.result;
+          document.getElementById("editPreviewImage").src = editImageData;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
 
-    tableBody.appendChild(row);
-    form.reset();
-    document.getElementById("previewImage").classList.add("hidden");
-    imageData = null;
-  });
+    // Update Product
+    document.getElementById("editProductForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const row = tableBody.rows[editIndex];
+      row.cells[0].querySelector("img").src = editImageData;
+      row.cells[1].textContent = document.getElementById("editName").value;
+      row.cells[2].textContent = document.getElementById("editPrice").value;
+      row.cells[3].textContent = document.getElementById("editMaterial").value;
+      row.cells[4].textContent = document.getElementById("editDimensions").value;
+      row.cells[5].textContent = document.getElementById("editColor").value;
+      row.cells[6].textContent = document.getElementById("editWeight").value;
+      row.cells[7].textContent = document.getElementById("editSeating").value;
+      row.cells[8].textContent = document.getElementById("editWarranty").value;
+      row.cells[9].textContent = document.getElementById("editAvailability").value;
+      row.cells[10].textContent = document.getElementById("editReturnPolicy").value;
 
-  function deleteRow(btn) {
-    btn.closest("tr").remove();
-  }
-
-  function editRow(btn) {
-    const row = btn.closest("tr");
-    editIndex = row.rowIndex - 1;
-    const cells = row.children;
-
-    document.getElementById("editPreviewImage").src = cells[0].querySelector("img").src;
-    document.getElementById("editName").value = cells[1].textContent;
-    document.getElementById("editPrice").value = cells[2].textContent;
-    document.getElementById("editMaterial").value = cells[3].textContent;
-    document.getElementById("editDimensions").value = cells[4].textContent;
-    document.getElementById("editColor").value = cells[5].textContent;
-    document.getElementById("editWeight").value = cells[6].textContent;
-    document.getElementById("editSeating").value = cells[7].textContent;
-    document.getElementById("editWarranty").value = cells[8].textContent;
-    document.getElementById("editAvailability").value = cells[9].textContent;
-    document.getElementById("editReturnPolicy").value = cells[10].textContent;
-    editImageData = cells[0].querySelector("img").src;
-
-    document.getElementById("editModal").classList.remove("hidden");
-    document.getElementById("editModal").classList.add("flex");
-  }
-
-  function closeEditModal() {
-    document.getElementById("editModal").classList.add("hidden");
-  }
-
-  document.getElementById("editProductForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const row = tableBody.rows[editIndex];
-
-    row.cells[0].querySelector("img").src = editImageData;
-    row.cells[1].textContent = document.getElementById("editName").value;
-    row.cells[2].textContent = document.getElementById("editPrice").value;
-    row.cells[3].textContent = document.getElementById("editMaterial").value;
-    row.cells[4].textContent = document.getElementById("editDimensions").value;
-    row.cells[5].textContent = document.getElementById("editColor").value;
-    row.cells[6].textContent = document.getElementById("editWeight").value;
-    row.cells[7].textContent = document.getElementById("editSeating").value;
-    row.cells[8].textContent = document.getElementById("editWarranty").value;
-    row.cells[9].textContent = document.getElementById("editAvailability").value;
-    row.cells[10].textContent = document.getElementById("editReturnPolicy").value;
-
-    closeEditModal();
-  });
-</script>
+      closeEditModal();
+    });
+  </script>
 
 
 </div>
