@@ -173,15 +173,19 @@
       </div>
     </div>
 
-    <form class="space-y-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <input type="text" placeholder="Name" class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#bc9565]" />
-        <input type="email" placeholder="Email" class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#bc9565]" />
-      </div>
-      <input type="text" placeholder="Subject" class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#bc9565]" />
-      <textarea rows="4" placeholder="Your Message" class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#bc9565]"></textarea>
-      <button type="submit" class="bg-[#bc9565] text-white px-6 py-3 rounded hover:bg-[#a77d4d] transition">Send Message</button>
-    </form>
+   <form id="contactForm" class="space-y-4" novalidate>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <input type="text" id="name" placeholder="Name" class="w-full border border-gray-300 rounded px-4 py-3" />
+    <input type="email" id="email" placeholder="Email" class="w-full border border-gray-300 rounded px-4 py-3" />
+  </div>
+  <input type="text" id="subject" placeholder="Subject" class="w-full border border-gray-300 rounded px-4 py-3" />
+  <textarea id="message" rows="4" placeholder="Your Message" class="w-full border border-gray-300 rounded px-4 py-3"></textarea>
+  <button type="submit" class="bg-[#bc9565] text-white px-6 py-3 rounded hover:bg-[#a77d4d] transition">Send Message</button>
+</form>
+
+
+
+
   </div>
 
   <div class="mt-16 w-full">
@@ -243,6 +247,48 @@
     © 2025 All Rights Reserved. Powered by <span class="text-white font-semibold">Cybexel</span>
   </div>
 </footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault(); 
+
+  let name = document.getElementById("name").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let subject = document.getElementById("subject").value.trim();
+  let message = document.getElementById("message").value.trim();
+
+  let namePattern = /^[A-Za-z\s]{2,}$/; 
+  let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/; 
+  let subjectPattern = /^[A-Za-z\s]+$/;
+  let messagePattern = /^[A-Za-z\s]+$/; 
+  let urlPattern = /(https?:\/\/|www\.)/i; 
+
+  if (!namePattern.test(name) || urlPattern.test(name)) {
+    alert("Name must contain only letters and spaces (no numbers, symbols, or URLs) and be at least 2 characters long.");
+    return;
+  }
+
+  
+  if (!emailPattern.test(email) || urlPattern.test(email)) {
+    alert("Please enter a valid email address (must end with a proper domain like .com, .org, .net).");
+    return;
+  }
+
+  let subjectWords = subject.split(/\s+/);
+  if (!subjectPattern.test(subject) || subjectWords.length > 4 || subjectWords.length === 0 || urlPattern.test(subject)) {
+    alert("Subject must contain only letters and spaces, no URLs, and be maximum 4 words.");
+    return;
+  }
+
+  if (!messagePattern.test(message) || message.length < 10 || message.length > 200 || urlPattern.test(message)) {
+    alert("Message must contain only letters and spaces, no URLs, and have a length between 10 and 200 characters.");
+    return;
+  }
+
+  alert("Form submitted successfully!");
+  e.target.submit();
+});
+</script>
   <script src="./static/js/script.js"></script>
 
 </body>

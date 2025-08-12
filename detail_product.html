@@ -314,6 +314,8 @@
 </section>
 
 
+
+
 <section class="mt-20 px-24">
   <h1 class="text-2xl font-bold text-[#2e2e2e] mb-6 inline-block pb-2">
     Related Products
@@ -489,7 +491,7 @@
 
 
 
-<footer class="bg-black text-white px-6 md:px-24 py-20">
+<footer class="bg-black text-white px-6 md:px-24 py-20 mt-10">
   <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
     <div>
       <img src="/static/images/logo11.png" alt="Logo" class="w-44 mb-4">
@@ -540,7 +542,46 @@
     © 2025 All Rights Reserved. Powered by <span class="text-white font-semibold">Cybexel</span>
   </div>
 </footer>
+<script>
+document.querySelector("form").addEventListener("submit", function(e) {
+  e.preventDefault(); 
 
+  let nameField = document.querySelector('input[placeholder="Enter your name"]');
+  let contactField = document.querySelector('input[placeholder="Enter your contact number"]');
+
+  let name = nameField.value.trim();
+  let contact = contactField.value.trim();
+
+  let namePattern = /^[A-Za-z\s]{2,}$/; 
+  let phonePattern = /^[0-9]+$/; 
+  let urlPattern = /(https?:\/\/|www\.)/i; 
+
+  if (!namePattern.test(name) || urlPattern.test(name)) {
+    alert("Your name must contain only letters and spaces, at least 2 characters, and no URLs.");
+    nameField.focus();
+    return;
+  }
+
+  if (urlPattern.test(contact)) {
+    alert("Contact number cannot contain URLs.");
+    contactField.focus();
+    return;
+  }
+  if (!phonePattern.test(contact)) {
+    alert("Contact number must contain only digits, no spaces or symbols.");
+    contactField.focus();
+    return;
+  }
+  if (contact.length < 10 || contact.length > 15) {
+    alert("Contact number must be between 10 and 15 digits long.");
+    contactField.focus();
+    return;
+  }
+
+  alert("Enquiry submitted successfully!");
+  e.target.submit();
+});
+</script>
 <script src="./static/js/script.js"></script>
   </body>
   </html>
