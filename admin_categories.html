@@ -57,33 +57,53 @@
           </thead>
           <tbody>
             <tr>
-              <td class="border border-gray-200 px-4 py-2">1</td>
-              <td class="border border-gray-200 px-4 py-2">Sofa</td>
-              <td class="border border-gray-200 px-4 py-2 space-x-2">
-                <button class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">Edit</button>
-                <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Delete</button>
-              </td>
-            </tr>
+  <td class="border border-gray-200 px-4 py-2">1</td>
+  <td class="border border-gray-200 px-4 py-2 category-name">Sofa</td>
+  <td class="border border-gray-200 px-4 py-2 space-x-2">
+    <button onclick="openEditModal(this.closest('tr'))" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">Edit</button>
+    <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Delete</button>
+  </td>
+</tr>
+
             <tr>
-              <td class="border border-gray-200 px-4 py-2">2</td>
-              <td class="border border-gray-200 px-4 py-2">Table</td>
-              <td class="border border-gray-200 px-4 py-2 space-x-2">
-                <button class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">Edit</button>
-                <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Delete</button>
-              </td>
-            </tr>
+  <td class="border border-gray-200 px-4 py-2">1</td>
+  <td class="border border-gray-200 px-4 py-2 category-name">Sofa</td>
+  <td class="border border-gray-200 px-4 py-2 space-x-2">
+    <button onclick="openEditModal(this.closest('tr'))" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">Edit</button>
+    <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Delete</button>
+  </td>
+</tr>
+
           </tbody>
         </table>
       </div>
 
     </main>
   </div>
+<!-- Edit Modal -->
+<div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden z-50">
+  <div class="bg-white w-full max-w-md rounded-lg shadow-lg p-6">
+    <h2 class="text-xl font-semibold mb-4">Edit Category</h2>
+    <form id="editForm">
+      <div class="mb-4">
+        <label class="block text-sm font-medium mb-2">Category Name</label>
+        <input type="text" id="editCategoryName" class="w-full border border-gray-300 rounded-lg p-2" required>
+      </div>
+      <div class="flex justify-end space-x-3">
+        <button type="button" onclick="closeEditModal()" class="px-4 py-2 rounded bg-gray-300 hover:bg-gray-400">Cancel</button>
+        <button type="submit" class="px-4 py-2 rounded bg-[#bc9565] text-white hover:bg-[#a47f54]">Save Changes</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
 
   <script>
     function toggleSidebar() {
       document.getElementById('sidebar').classList.toggle('-translate-x-full');
     }
   </script>
-
+<script src="./static/js/admin_scripts.js"></script>
 </body>
 </html>
