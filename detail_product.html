@@ -269,7 +269,7 @@
 
 
 <div id="enquiryModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
-  <div class="bg-white rounded-lg w-full max-w-lg p-6 relative">
+  <div class="bg-white rounded-lg w-full max-w-2xl max-h-[70vh] overflow-y-auto p-6 relative"> <!-- increased width, reduced height -->
     <button onclick="closeEnquiryModal()" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl">&times;</button>
     <h1 class="text-2xl font-bold text-[#2e2e2e] mb-4">Product Enquiry</h1>
 
@@ -291,10 +291,9 @@
         <input id="productColor" type="text" class="w-full border border-gray-300 rounded px-4 py-2 mt-1" readonly>
       </div>
       <div class="mb-4">
-  <label class="block text-sm font-medium">Quantity</label>
-  <input id="productQuantity" type="number" class="w-full border border-gray-300 rounded px-4 py-2 mt-1" readonly>
-</div>
-
+        <label class="block text-sm font-medium">Quantity</label>
+        <input id="productQuantity" type="number" class="w-full border border-gray-300 rounded px-4 py-2 mt-1" readonly>
+      </div>
 
       <div class="mb-4">
         <label class="block text-sm font-medium">Your Name</label>
@@ -312,18 +311,28 @@
   </div>
 </div>
 
+
 </section>
 
 
 
 
-<section class="mt-20 px-24">
+<section class="mt-20 px-6 md:px-24 ">
   <h1 class="text-2xl font-bold text-[#2e2e2e] mb-6 inline-block pb-2">
     Related Products
   </h1>
 
-   <div id="cardContainer" class="hide-scrollbar flex md:grid md:grid-cols-2 lg:grid-cols-4 overflow-x-auto md:overflow-visible gap-6 scroll-smooth snap-x snap-mandatory px-1 md:px-0">
-    
+
+  
+<div class="relative">
+  <button 
+    class="absolute left-2 top-1/2 -translate-y-1/2  text-black w-10 h-10 rounded-full flex items-center justify-center z-50 md:hidden"
+    onclick="scrollCards(-1)"
+  >
+        &#10094;
+  </button>
+
+  <div id="cardContainer" class="hide-scrollbar flex md:grid md:grid-cols-2 lg:grid-cols-4 overflow-x-auto md:overflow-visible gap-6 scroll-smooth snap-x snap-mandatory px-1 md:px-0">    
 <a href="detail_product.html" class="min-w-full md:min-w-0 snap-start group relative">
   <div class="bg-white rounded-xl shadow p-4 hover:shadow-lg transition duration-300 w-full">
 
@@ -448,6 +457,18 @@
     
     
   </div>
+
+  <button 
+    class="absolute right-2 top-1/2 -translate-y-1/2  text-black w-10 h-10 rounded-full flex items-center justify-center z-50 md:hidden"
+    onclick="scrollCards(1)"
+  >
+        &#10095;
+  </button>
+</div>
+
+
+
+
 
 
 <div id="shareModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-50 flex items-center justify-center">
@@ -586,6 +607,20 @@ document.querySelector("form").addEventListener("submit", function(e) {
   alert("Enquiry submitted successfully!");
   e.target.submit();
 });
+</script>
+
+
+
+
+<script>
+  function scrollCards(direction) {
+    const container = document.getElementById('cardContainer');
+    const cardWidth = container.querySelector('a').offsetWidth + 24; 
+    container.scrollBy({
+      left: direction * cardWidth,
+      behavior: 'smooth'
+    });
+  }
 </script>
 <script src="./static/js/script.js"></script>
   </body>
